@@ -8,6 +8,7 @@
         <script src="{{asset('template/layouts/vertical-light-menu/app.js')}}"></script>
         <script src="{{asset('template/src/plugins/src/global/vendors.min.js')}}"></script>
         <script src="{{asset('template/src/assets/js/custom.js')}}"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
         <!-- END GLOBAL MANDATORY SCRIPTS -->
 
         <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
@@ -17,7 +18,7 @@
         <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 
         <script>
-            
+            feather.replace();
             ClassicEditor
                 .create( document.querySelector( '#editor' ))
                 .then( editor => {
