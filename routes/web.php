@@ -6,6 +6,16 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\UserController;
 
+function set_active($routes, $isSubmenu = false) {
+    foreach ((array) $routes as $route) {
+        if (Route::is($route)) {
+            return $isSubmenu ? 'show' : 'active';;
+        }
+    }
+    return '';
+}
+
+
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -26,7 +36,7 @@ require __DIR__.'/auth.php';
 Route::middleware(['auth','role:admin'])->group(function () {
     // Route::get('admin/dashboard', [AdminController::class, 'dashboard']);
     Route::prefix('admin')->group(function(){
-        Route::get('/dashboard',[AdminController::class, 'dashboard']);
+        Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
 
         Route::prefix('user')->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('user');
