@@ -1,5 +1,4 @@
 @extends('layout/main')
-@include('layout/navbar')
 @section('content')
     <div class="row layout-top-spacing">
 

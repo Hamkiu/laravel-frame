@@ -40,6 +40,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
 
         Route::prefix('user')->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('user');
+            Route::any('list', [UserController::class, 'list'])->name('user.list');
             Route::get('create', [UserController::class, 'create'])->name('user.create');
             Route::post('store', [UserController::class, 'store'])->name('user.store');
             Route::any('list', [UserController::class, 'list'])->name('user.list');

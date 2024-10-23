@@ -1,5 +1,5 @@
-<html>
-    <body>
+
+  
          <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
         <script src="{{asset('template/src/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('template/src/plugins/src/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
@@ -16,6 +16,11 @@
         <script src="{{asset('template/src/plugins/src/apex/apexcharts.min.js')}}"></script>
         <script src="{{asset('template/src/assets/js/dashboard/dash_1.js')}}"></script>
         <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        {{-- <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script> --}}
+
+        <script src="{{asset('template/src/plugins/src/table/datatable/datatables.js')}}"></script>
 
         <script>
             feather.replace();
@@ -51,5 +56,4 @@
             }
         </script>
         <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-    </body>
-</html>
+        @stack('scripts')
